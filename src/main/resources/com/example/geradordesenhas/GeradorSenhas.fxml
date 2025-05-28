@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: #2b2c30;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.geradordesenhas.GeradorSenhas">
+    <children>
+
+        <VBox accessibleRole="IMAGE_VIEW" alignment="CENTER" spacing="20.0">
+            <children>
+                <Label text="Gerador de Senhas" textFill="WHITE">
+                    <font>
+                        <Font name="Courier New Bold" size="40.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="15.0" />
+                    </VBox.margin>
+                </Label>
+
+                <!-- HBox 1 -->
+                <HBox alignment="CENTER_LEFT" maxWidth="300.0" spacing="20.0">
+                    <children>
+                        <StackPane fx:id="toggleSwitch" onMouseClicked="#toggle" prefHeight="25" prefWidth="50" style="-fx-cursor: hand;">
+                            <children>
+                                <Rectangle fx:id="background" arcHeight="25" arcWidth="25" fill="#ccc" height="25" width="50" />
+                                <Circle fx:id="thumb" fill="white" radius="11" stroke="#bbb" />
+                            </children>
+                        </StackPane>
+                        <Label text="Letra Maiúsculas" textFill="WHITE">
+                            <font>
+                                <Font name="SansSerif Bold" size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+
+                <!-- HBox 2 -->
+                <HBox alignment="CENTER_LEFT" maxWidth="300.0" spacing="20.0">
+                    <children>
+                        <StackPane fx:id="toggleSwitch1" onMouseClicked="#toggle1" prefHeight="25" prefWidth="50" style="-fx-cursor: hand;">
+                            <children>
+                                <Rectangle fx:id="background1" arcHeight="25" arcWidth="25" fill="#ccc" height="25" width="50" />
+                                <Circle fx:id="thumb1" fill="white" radius="11" stroke="#bbb" />
+                            </children>
+                        </StackPane>
+                        <Label text="Letra Minúsculas" textFill="WHITE">
+                            <font>
+                                <Font name="SansSerif Bold" size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+
+                <!-- HBox 3 -->
+                <HBox alignment="CENTER_LEFT" maxWidth="300.0" spacing="20.0">
+                    <children>
+                        <StackPane fx:id="toggleSwitch2" onMouseClicked="#toggle2" prefHeight="25" prefWidth="50" style="-fx-cursor: hand;">
+                            <children>
+                                <Rectangle fx:id="background2" arcHeight="25" arcWidth="25" fill="#ccc" height="25" width="50" />
+                                <Circle fx:id="thumb2" fill="white" radius="11" stroke="#bbb" />
+                            </children>
+                        </StackPane>
+                        <Label text="Incluir Números" textFill="WHITE">
+                            <font>
+                                <Font name="SansSerif Bold" size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+
+                <!-- HBox 4 -->
+                <HBox alignment="CENTER_LEFT" maxWidth="300.0" spacing="20.0">
+                    <children>
+                        <StackPane fx:id="toggleSwitch3" onMouseClicked="#toggle3" prefHeight="25" prefWidth="50" style="-fx-cursor: hand;">
+                            <children>
+                                <Rectangle fx:id="background3" arcHeight="25" arcWidth="25" fill="#ccc" height="25" width="50" />
+                                <Circle fx:id="thumb3" fill="white" radius="11" stroke="#bbb" />
+                            </children>
+                        </StackPane>
+                        <Label text="Incluir símbolos (!@#)" textFill="WHITE">
+                            <font>
+                                <Font name="SansSerif Bold" size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            <HBox alignment="CENTER_LEFT" maxHeight="26.0" maxWidth="300.0" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+               <children>
+                  <Slider fx:id="slider" max="32.0" maxWidth="230.0" min="8.0" prefHeight="24.0" prefWidth="194.0" />
+      
+                      <TextField fx:id="textFieldSlider" alignment="CENTER" disable="false" focusTraversable="false" maxWidth="400.0" prefHeight="26.0" prefWidth="102.0" promptText="Tam. Senha" style="-fx-highlight-fill: transparent; -fx-highlight-text-fill: white;">
+                          <font>
+                              <Font name="SansSerif Bold" size="15.0" />
+                          </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                      </TextField>
+               </children>
+            </HBox>
+            <TextField fx:id="campoSenha" alignment="CENTER" disable="true" editable="false" focusTraversable="false" maxWidth="400.0" promptText="***************" style="-fx-highlight-fill: transparent; -fx-highlight-text-fill: white;">
+               <font>
+                  <Font name="SansSerif Bold" size="20.0" />
+               </font>
+            </TextField>
+      
+                            <HBox alignment="CENTER" maxWidth="400.0" spacing="0.0">
+                    <children>
+                        <Button fx:id="btnGerarSenha" focusTraversable="false" maxWidth="86.0" mnemonicParsing="false" prefWidth="90.0" text="Nova Senha">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Button fx:id="btnCopiarSenha" focusTraversable="false" maxWidth="86.0" mnemonicParsing="false" prefWidth="90.0" text="Copiar">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+
+              <HBox alignment="CENTER" maxHeight="50.0" maxWidth="100.0" prefHeight="100.0" prefWidth="100.0" spacing="10.0" translateX="400.0" translateY="220.0">
+            <children>
+                <Label text="v1.0.0" textFill="GREY" />
+                <ImageView fx:id="imageViewLink" fitHeight="40" fitWidth="40" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../icon/github.png" />
+                    </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+                </ImageView>
+            </children>
+        </HBox>
+    </children>
+</StackPane>
